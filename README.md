@@ -13,11 +13,44 @@ https://lunacal-ui-git-main-realmastergods-projects.vercel.app/
    https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 
-# React + Vite
+# Technologies Used
+## React + Vite
+To make a vite react project simple type the commands below 
+```bash
+npm create vite@latest app-name -- --template react
+```
+To run this project, use the command
+```bash
+   npm install
+   npm run dev
+```
+OR follow the official guide here https://vitejs.dev/guide/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## TailwindCSS
+To set up tailwindCSS in react + vite app, run this command in working directory where you created the react vite app
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+Now open the tailwind.config.js file and replace the code with the code below
+```bash
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+In your project there must be an index.css or global.css. Paste these three lines of code at the top of that file
+```bash
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+Now, just ren your react app.
+Need more info? See here: https://tailwindcss.com/docs/guides/vite
